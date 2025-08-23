@@ -2,8 +2,10 @@
 name: Backend CI Pipeline
 
 # Evento que dispara a pipeline
+
 # Ela vai rodar a cada 'pull request' para a branch 'main'
 # e também a cada 'push' (o que acontece depois de um merge) na 'main'.
+
 on:
   push:
     branches:
@@ -15,12 +17,14 @@ on:
 # Definição dos 'jobs' (tarefas) que a pipeline vai executar.
 jobs:
   build_and_test:
+
     # O tipo de máquina virtual que o GitHub Actions vai usar.
     runs-on: ubuntu-latest
 
     # Os passos que o 'job' vai seguir.
     steps:
       # Passo 1: Clona o código do seu repositório para a máquina virtual.
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -43,3 +47,4 @@ jobs:
         run: |
           cd backend
           pytest
+
